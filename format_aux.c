@@ -1,11 +1,9 @@
 #include "main.h"
-
 /**
  * format_aux - function
  * @format: string provided
  * Return: pointer to char
  */
-
 int (*format_aux(const char *format))(va_list)
 {
 	int i = 0;
@@ -17,10 +15,10 @@ int (*format_aux(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (; p[i].t == NULL; i++)
+	for (; p[i].t != NULL; i++)
 	{
 		if (*(p[i].t) == *format)
-			continue;
+		break;
 	}
 	return (p[i].f);
 }

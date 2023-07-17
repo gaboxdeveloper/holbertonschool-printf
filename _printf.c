@@ -2,8 +2,7 @@
 /**
  *_printf - simple printf function
  *@format: variadic list of arguments
- *Return:  the number of characters printed (excluding the null byte used
- *to end output to strings)
+ *Return:  the number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
 {
@@ -14,36 +13,34 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
-
 	while (format && format[x])
 	{
 		if (format[x] != '%')
 		{
 			_putchar(format[x]);
-				counter++;
-				x++;
-				continue;
+			counter++, x++;
+			continue;
 		}
 		else if (format[x + 1] == '%')
 		{
 			_putchar('%');
-		counter++;
-		x++;
-		continue;
+			counter++;
+			x++;
 		}
 		else
 		{
-			f = format_aux(&format[x + 1]);
-				if (NULL)
+				f = format_aux(&format[x + 1]);
+				if (f == NULL)
 				{
+					va_end(ap);
 					return (-1);
-					x += 2;
-					counter += f(ap);
-					continue;
 				}
+
+				counter += f(ap);
+				x++;
 		}
 		x++;
-		va_end(ap);
 	}
+	va_end(ap);
 	return (counter);
 }

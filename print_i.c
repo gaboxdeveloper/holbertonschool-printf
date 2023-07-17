@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  *print_i - Function that print decimal
  *@i: A interger
@@ -19,7 +18,7 @@ int print_i(va_list i)
 	}
 	a[0] = n / m;
 
-	for (; n < 10; j++)
+	for (; n < 10; n++)
 	{
 		m = m / 10;
 		a[j] = (n / m) % 10;
