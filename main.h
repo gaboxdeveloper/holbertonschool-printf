@@ -11,6 +11,7 @@ typedef struct print
 } print_t;
 
 int _printf(const char *format, ...);
+int (*format_aux(const char *format))(va_list);
 int print_c(va_list c);
 int print_s(va_list s);
 int print_d(va_list d);
