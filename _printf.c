@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
+	int (*f)(va_list);
 	unsigned int x = 0, counter = 0;
 
 	if (format == NULL)
@@ -33,11 +34,13 @@ int _printf(const char *format, ...)
 		else
 		{
 			f = format_aux(&format[x + 1]);
-				if = NULL;
+				if (NULL)
+				{
 					return (-1);
 					x += 2;
 					counter += f(ap);
 					continue;
+				}
 		}
 		x++;
 		va_end(ap);
