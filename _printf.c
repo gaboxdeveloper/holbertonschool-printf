@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 					return (-1);
 					x += 2;
 					counter += f(ap);
-					contiune;
+					continue;
 		}
 		x++;
 		va_end(ap);

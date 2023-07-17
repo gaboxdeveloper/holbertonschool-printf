@@ -8,8 +8,8 @@ int (*format_aux(const char *format))(va_list)
 		{"s", print_s},
 		{"d", print_d},
 		{"i", print_i},
-		{NULL, NULL};
-	}
+		{NULL, NULL}
+	};
 
 	for (; p[i].t == NULL; i++)
 	{
