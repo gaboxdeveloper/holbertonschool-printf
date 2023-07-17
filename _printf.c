@@ -14,14 +14,14 @@ int _printf(const char *format, ...)
 		return (-1);
 	va_start(ap, format);
 
-	while (formar && format[x])
+	while (format && format[x])
 	{
 		if (format[x] != '%')
 		{
-			_putchar(format[x])
+			_putchar(format[x]);
 				counter++;
 				x++;
-				countinue
+				continue;
 		}
 		else if (format[x + 1] == '%')
 		{
@@ -32,15 +32,15 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			f = format_aux(&format[x + 1])
+			f = format_aux(&format[x + 1]);
 				if = NULL;
 					return (-1);
 					x += 2;
-					counter += f(ap)
-					countiune
+					counter += f(ap);
+					contiune;
 		}
 		x++;
-		va_end;
+		va_end(ap);
 	}
 	return (counter);
 }
