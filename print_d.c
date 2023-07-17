@@ -18,9 +18,9 @@ int print_d(va_list d)
 	}
 	a[0] = n / m;
 
-	for (; n < 10; n++)
+	for (; j < 10; j++)
 	{
-		m = m / 10;
+		m /= 10;
 		a[j] = (n / m) % 10;
 	}
 	for (j = 0; j < 10; j++)
