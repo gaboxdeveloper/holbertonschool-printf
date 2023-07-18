@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
-	while (format && format[x])
+	while (format[x])
 	{
 		if (format[x] != '%')
 		{
@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 			counter++, x++;
 			continue;
 		}
-		else if (format[x + 1] == '%')
+		else if (format[x + 1] == '%' || format[x + 1] == ' ')
 		{
 			_putchar('%');
 			counter++;
@@ -29,15 +29,15 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-				f = format_aux(&format[x + 1]);
-				if (f == NULL)
-				{
-					va_end(ap);
-					return (-1);
-				}
+			f = format_aux(&format[x + 1]);
+			if (f == NULL)
+			{
+				va_end(ap);
+				return (-1);
+			}
 
-				counter += f(ap);
-				x++;
+			counter += f(ap);
+			x++;
 		}
 		x++;
 	}
