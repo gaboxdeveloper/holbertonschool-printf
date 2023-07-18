@@ -6,31 +6,21 @@
  */
 int print_i(va_list i)
 {
-	int a[10];
-	int j = 1, m = 1000000000, sum = 0, counter = 0, n;
+	int num = va_arg(i, int);
+	int length = snprintf(NULL, 0, "%i", num) + 1;
+	int c, counter = 0;
+	char *str = malloc(length * sizeof(char));
 
-	n = va_arg(i, int);
-	if (n < 0)
+	if (str == NULL)
+		return (-1);
+
+	sprintf(str, "%i", num);
+
+	for (c = 0; str[c] != '\0'; c++)
 	{
-		n *= -1;
-		_putchar ('-');
+		_putchar(str[c]);
 		counter++;
 	}
-	a[0] = n / m;
-
-	for (; j < 10; j++)
-	{
-		m /= 10;
-		a[j] = (n / m) % 10;
-	}
-	for (j = 0; j < 10; j++)
-	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
-		{
-			_putchar('0' + a[j]);
-			counter++;
-		}
-	}
+	free(str);
 	return (counter);
 }
