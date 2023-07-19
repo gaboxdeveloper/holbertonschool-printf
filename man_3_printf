@@ -1,0 +1,39 @@
+NAME
+	_printf, it is a function to print formatted output conversion
+
+LIBRARY
+	Main.h local library
+
+SYNOPSIS
+	#include "main.h"
+	int _printf(const char *format, ...);
+
+DESCRIPTION
+	The function _printf() produce output according to a format as described
+	below. It writes output to stdout, the standard output stream.
+	
+Conversion specifiers
+	d, i	The int argument is converted to signed decimal notation.
+            The default precision is 1.
+
+	c		If no l modifier is present, the int argument is converted
+            to an unsigned char, and the resulting character is written.
+
+	s		the const char * argument is expected to be a pointer to an array 
+			of character type (pointer to a string).  Characters from the 
+			array are written up to (but not including) a terminating null 
+			byte ('\0').
+
+	%		A '%' is written. No argument is converted. The complete 
+			conversion specification is '%%'.
+
+RETURN VALUE
+	Upon successful return, these functions return the number of
+    characters printed (excluding the null byte used to end output to
+	strings). If an output error is encountered, a negative value is returned.
+
+EXAMPLES
+	
+AUTHORS
+	Martin Abreu
+	Gabriel Rossy

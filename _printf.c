@@ -23,12 +23,6 @@ int _printf(const char *format, ...)
 			counter++, x++;
 			continue;
 		}
-		else if (format[x + 1] == '%')
-		{
-			_putchar('%');
-			counter++;
-			x++;
-		}
 		else
 		{
 			f = format_aux(&format[x + 1]);
@@ -36,7 +30,7 @@ int _printf(const char *format, ...)
 				{
 					va_end(ap);
 					return (-1);
-				}		
+				}
 				counter += f(ap);
 				x++;
 		}
