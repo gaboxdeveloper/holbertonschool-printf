@@ -13,6 +13,7 @@ int (*format_aux(const char *format))(va_list)
 		{"d", print_d},
 		{"i", print_i},
 		{"%", print_percent},
+		{"r", print_r},
 		{NULL, NULL}
 	};
 
