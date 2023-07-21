@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  *print_percent - Print %
- *@%: Percent to print
+ *@m: Percent to print
  *Return: 1 Success
  */
 int print_percent(va_list m)

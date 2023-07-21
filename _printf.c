@@ -24,7 +24,9 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (format[x + 1] == '\0')
+		{
 			return (-1);
+		}
 		if (format[x] == '%')
 		{
 			f = format_aux(&format[x + 1]);
@@ -32,7 +34,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar(format[x]);
 				_putchar(format[x + 1]);
-				counter++, x++;
+				counter = counter + 2, x = x + 2;
 				continue;
 			}
 			counter += f(ap);
