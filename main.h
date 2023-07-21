@@ -18,4 +18,6 @@ int print_d(va_list d);
 int print_i(va_list i);
 int print_percent(va_list m);
 int _putchar(char c);
+int print_r(va_list r);
+int print_u(va_list u);
 #endif
