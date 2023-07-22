@@ -12,15 +12,20 @@ int print_d(va_list d)
 	n = va_arg(d, int);
 	if (n < 0)
 	{
-		_putchar ('-');
-		counter++;
 		if (n == INT_MIN)
 		{
+			_putchar('-');
 			_putchar('2');
 			counter++;
 			n %= 1000000000;
+			n *= -1;
 		}
-		n += -1;
+		else
+		{
+			_putchar('-');
+			counter++;
+			n *= -1;
+		}
 	}
 	a[0] = n / m;
 
