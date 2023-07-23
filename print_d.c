@@ -16,7 +16,7 @@ int print_d(va_list d)
 		{
 			_putchar('-');
 			_putchar('2');
-			counter++;
+			counter += 2;
 			n %= 1000000000;
 			n *= -1;
 		}
